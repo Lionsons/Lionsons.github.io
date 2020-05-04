@@ -78,15 +78,41 @@ body {
   background-color: #000;
   position: absolute;
   top: 0;
-  left: 0;
+  left: -100%;
   width: 100%;
+  transition: all .5s;
+}
+.nav__menu.active {
+  left: 0;
+}
+.container-menu {
+  position: relative;
 }
 .close-btn {
   width: 50px;
   height: 50px;
   position: absolute;
-  right: 0;
+  right: 15px;
+  top: 31px;
+  background-color: #000;
+  cursor: pointer;
+  
+}
+.close-btn::after,
+.close-btn::before {
+  content: "";
+  width: 70px;
+  height: 2px;
+  position: absolute;
   background-color: #fff;
+  transform-origin: left;
+}
+.close-btn::after {
+  transform: rotate(45deg);
+}
+.close-btn::before {
+  transform: rotate(-45deg);
+  bottom: -1px;
 }
 .menu {
   height: 100vh;
@@ -108,6 +134,7 @@ body {
 }
 .menu__link:hover {
 border-color: #fff;
+transform: scale(1.1);
 }
 
 .slider__item {
